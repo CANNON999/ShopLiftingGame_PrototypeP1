@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>40款已推出的纯2D素材俯视角游戏参考</title>
+  <style>
+:root {
+  color-scheme: dark;
+  --bg: #0e1117;
+  --panel: #161b24;
+  --panel-2: #1f2633;
+  --text: #eef2f7;
+  --muted: #aab4c3;
+  --accent: #7dd3fc;
+  --accent-2: #f0abfc;
+  --line: rgba(255, 255, 255, 0.10);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(125, 211, 252, 0.16), transparent 28rem),
+    radial-gradient(circle at 90% 12%, rgba(240, 171, 252, 0.12), transparent 30rem),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+header {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 24px 28px;
+}
+.eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+.lead {
+  max-width: 980px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+.note-box {
+  max-width: 1240px;
+  margin: 0 auto 22px;
+  padding: 0 24px;
+}
+.note-box > div {
+  border: 1px solid var(--line);
+  background: rgba(22, 27, 36, 0.72);
+  border-radius: 18px;
+  padding: 16px 18px;
+  color: var(--muted);
+}
+.grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 10px 24px 58px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 22px;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(31, 38, 51, 0.94), rgba(18, 23, 31, 0.94));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+.image-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: #05070a;
+  border-bottom: 1px solid var(--line);
+}
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.image-wrap.broken::after {
+  content: "图片外链加载失败，请点击下方“截图来源”查看";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 12px, transparent 12px, transparent 24px);
+}
+.content { padding: 20px 20px 18px; }
+.title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.num {
+  flex: 0 0 auto;
+  min-width: 42px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(125, 211, 252, 0.14);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+}
+h2 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.meta {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.meta b { color: #dbeafe; font-weight: 650; }
+p { margin: 14px 0 0; }
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 10px;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 999px;
+  background: rgba(125, 211, 252, 0.08);
+  font-size: 13px;
+}
+footer {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px 42px;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 520px) {
+  header { padding-top: 36px; }
+  .grid { grid-template-columns: 1fr; padding-inline: 14px; }
+  .note-box { padding-inline: 14px; }
+  header, footer { padding-inline: 14px; }
+  .content { padding: 16px; }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Top-down / Pure 2D Assets</div>
+    <h1>40款已推出的纯2D素材俯视角游戏参考</h1>
+    <p class="lead">本页合并了上一版20款与本次新增20款，覆盖像素、手绘、矢量、ASCII/瓦片、平面UI、经营模拟、战棋、射击、Roguelike、生活模拟、航海叙事等不同方向。每张图片均选取游戏内游玩时的玩家视角截图。</p>
+  </header>
+
+  <section class="note-box">
+    <div>
+      <b>筛选口径：</b>按你的补充定义，重点判断游戏实际画面素材是否以2D平面素材为主。即使作品使用 Unity、GameMaker、MonoGame 等引擎，只要玩家视角下的角色、场景、瓦片、UI与主要视觉资产是2D素材，也纳入；排除以3D模型或2.5D实体渲染为主要表现的作品。少数“等角/斜俯视”案例保留，是因为它们不是横版，也不是3D模型主导，而是2D像素或平面素材构成的俯视/斜俯视玩法。
+    </div>
+  </section>
+
+  <main class="grid">
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/250900/ss_ffac64b3c52a148ed6100c8b0ab87d011274991c.1920x1080.jpg?t=1731977365" alt="The Binding of Isaac: Rebirth 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">01</span><h2>The Binding of Isaac: Rebirth</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>怪诞涂鸦 / 暗黑像素 Roguelike</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、PlayStation Vita、Xbox One、Wii U、New Nintendo 3DS、Nintendo Switch、iOS</div>
+        <p>一款以地下室房间为单位推进的俯视角动作 Roguelike。玩家操控 Isaac 或其他角色，用泪弹进行四向射击，在随机生成的房间、道具和 Boss 组合中不断变异成长。它的美术把儿童涂鸦、宗教隐喻、体液与怪诞卡通结合在一起，2D房间结构非常清晰，适合作为“黑色幽默 + 顶视房间战斗”的参考。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/250900/The_Binding_of_Isaac_Rebirth/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/The_Binding_of_Isaac:_Rebirth" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/250900/The_Binding_of_Isaac_Rebirth/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/219150/ss_a868b45895c06a2e45a6f6a8646c4574b0157525.1920x1080.jpg?t=1686261983" alt="Hotline Miami 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">02</span><h2>Hotline Miami</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>霓虹复古 / 高反差像素暴力</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 3、PlayStation Vita、PlayStation 4、Android、Nintendo Switch</div>
+        <p>以1989年迈阿密为背景的俯视角高速动作游戏。玩家从上方观察整栋建筑，用近战武器、枪械和投掷物进行一击致命的清场，失败后几乎瞬间重开。强烈的霓虹色块、动物面具、血迹和电子音乐共同形成迷幻、暴烈、节奏化的2D视觉风格。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/219150/Hotline_Miami/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Hotline_Miami" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/219150/Hotline_Miami/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/311690/ss_703de0f20d4a817d3a320241f4e9ac7f7fa95bc1.1920x1080.jpg?t=1779733990" alt="Enter the Gungeon 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">03</span><h2>Enter the Gungeon</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>高密度像素 / 弹幕地牢卡通</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Nintendo Switch、Stadia</div>
+        <p>一款俯视角弹幕射击地牢 Roguelike。玩家选择不同枪牢冒险者进入随机房间，通过翻滚躲避密集子弹、拾取枪械和道具组合击败敌人。画面是典型高密度像素美术，但武器、子弹、角色表情和敌人设计都带有夸张幽默感，让战斗读图和喜剧感并存。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/311690/Enter_the_Gungeon/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Enter_the_Gungeon" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/311690/Enter_the_Gungeon/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://cdn.mobygames.com/screenshots/16036828-hyper-light-drifter-windows-a-hectic-battle-not-going-so-well.png" alt="Hyper Light Drifter 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">04</span><h2>Hyper Light Drifter</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>高饱和像素 / 破败科幻梦境</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、PlayStation Vita、Xbox One、Nintendo Switch、iOS</div>
+        <p>一款俯视角动作冒险 RPG，以无文字叙事和环境符号讲述病痛、文明遗迹与漂泊者的旅程。玩家在废墟、森林和机械遗址中用剑、枪与冲刺战斗。它的2D像素色彩非常鲜艳，但场景气质偏冷、孤独和神秘，是“复古像素 + 抽象科幻荒原”的代表。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/257850/Hyper_Light_Drifter/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Hyper_Light_Drifter" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://www.mobygames.com/game/73922/hyper-light-drifter/screenshots/windows/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://media.rawg.io/media/screenshots/3b4/3b4ae19dbd291095fda71700c3fa03b6.jpg" data-fallback="https://media.rawg.io/media/resize/640/-/screenshots/3b4/3b4ae19dbd291095fda71700c3fa03b6.jpg" alt="Darkwood 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">05</span><h2>Darkwood</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>阴郁手绘 / 顶视生存恐怖</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Nintendo Switch、Stadia、PlayStation 5、Xbox Series X/S</div>
+        <p>一款俯视角生存恐怖游戏。白天玩家在扭曲森林中探索、搜刮、交易和修补藏身处，夜晚则要加固房屋并熬过未知威胁。2D画面没有依赖第一人称跳吓，而是用扇形视野、低饱和手绘纹理、噪声和压迫音效制造恐惧，是顶视角恐怖表现的优秀案例。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/274520/Darkwood/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Darkwood" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://rawg.io/games/darkwood/screenshots" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://assets.topics.apps-jp.nintendo.com/image/2019/08/29030612516330/400/00001235_04.jpg" alt="Minit 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">06</span><h2>Minit</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>1-bit 黑白极简 / 60秒冒险</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Nintendo Switch、Android、iOS</div>
+        <p>一款黑白极简顶视角冒险游戏，每条生命只有60秒。玩家在反复死亡与重启中保留关键道具和线索，逐步解开地图结构和诅咒。它几乎只用黑白像素、简短文字和极少动画表达世界，适合参考“极低色彩预算下的可读性与节奏设计”。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/609490/Minit/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Minit_(video_game)" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://topics.nintendo.co.jp/article/0bcf6daa-bdd0-11e9-b641-063b7ac45a6d" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/736260/extras/778449dc1167dd2097c1333c613db785.avif?t=1760102539" alt="Baba Is You 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">07</span><h2>Baba Is You</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>涂鸦符号 / 规则文字解谜</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、Nintendo Switch、iOS、Android</div>
+        <p>一款顶视角网格解谜游戏，核心是推动文字方块改写规则，例如“BABA IS YOU”或“FLAG IS WIN”。玩家不仅移动物体，也改变物体的身份、胜利条件和可互动关系。画面像儿童黑板涂鸦，视觉元素极端符号化，因此规则本身成为最重要的美术与玩法对象。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/736260/Baba_Is_You/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Baba_Is_You" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/736260/Baba_Is_You/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1123450/ss_9e46f9eaaf395c41aacba63a739670abd9255c7d.1920x1080.jpg?t=1756392807" alt="Chicory: A Colorful Tale 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">08</span><h2>Chicory: A Colorful Tale</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>涂色书线稿 / 手绘填色冒险</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、PlayStation 4、PlayStation 5、Nintendo Switch、Xbox One、Xbox Series X/S</div>
+        <p>一款发生在涂色书世界中的俯视角冒险游戏。玩家拿起魔法画笔给场景上色，利用颜色影响机关、探索地区并帮助居民。它把“未上色线稿”作为世界状态，把“填色”作为动作与解谜方式，2D美术与互动方式高度统一。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/1123450/Chicory_A_Colorful_Tale/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Chicory:_A_Colorful_Tale" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/1123450/Chicory_A_Colorful_Tale/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://media.rawg.io/media/screenshots/096/09607312ed486dbfa823e83f2b445e44.jpg" data-fallback="https://media.rawg.io/media/resize/640/-/screenshots/096/09607312ed486dbfa823e83f2b445e44.jpg" alt="APE OUT 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">09</span><h2>APE OUT</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>大色块海报 / 爵士鼓动作</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Nintendo Switch</div>
+        <p>一款顶视角逃脱动作游戏，玩家控制一只猩猩冲出层层建筑，用撞击、抓取和投掷解决持枪敌人。它的美术几乎由大色块、剪影、粗线条和动态构图组成，配合即兴爵士鼓点，让关卡像一张会随着玩家行动爆裂的现代主义海报。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/447150/APE_OUT/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Ape_Out" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://rawg.io/games/ape-out/screenshots" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://dinopoloclub.com/wp-content/uploads/2021/07/MiniMotorways_image_03-scaled.jpg" alt="Mini Motorways 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">10</span><h2>Mini Motorways</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>极简地图 / 信息图形交通规划</div>
+        <div class="meta"><b>发售平台：</b>iOS、tvOS、macOS（Apple Arcade）、Windows、macOS（Steam）、Nintendo Switch</div>
+        <p>一款俯视城市地图的交通规划游戏。玩家通过画道路、桥梁、隧道和高速路，让不同颜色车辆抵达对应建筑，并在城市不断扩张时维持道路效率。它把城市压缩成清爽的信息图形：道路、建筑、车辆和河流都高度抽象，视觉重点是系统压力和空间关系。</p>
+        <div class="links">
+          <a href="https://dinopoloclub.com/games/mini-motorways/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Mini_Motorways" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://dinopoloclub.com/games/mini-motorways/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://rimworldgame.com/images/screens/rimworld-boreal.jpg" alt="RimWorld 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">11</span><h2>RimWorld</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>功能符号化2D / 殖民地模拟</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One</div>
+        <p>一款2D顶视角殖民地模拟游戏。玩家管理幸存者、房间布局、资源生产、防御、医疗和随机故事事件。人物与物件都用简洁平面符号表现，牺牲写实细节换取高可读性，使复杂系统、路径、库存、温度和战斗状态能同时在同一张地图上被理解。</p>
+        <div class="links">
+          <a href="https://rimworldgame.com/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/RimWorld" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://rimworldgame.com/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://www.wsgf.org/f/u/styles/ingame_screenshot_wide/public/contrib/dr/24937/ingame_16x9.png?itok=SwwCcah5" alt="Monaco: What&#x27;s Yours Is Mine 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">12</span><h2>Monaco: What&#x27;s Yours Is Mine</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>极简蓝图 / 霓虹潜行动作</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS / OS X、Linux、Xbox 360、Nintendo Switch</div>
+        <p>一款俯视角潜行劫案游戏，支持单人或最多四人合作。玩家选择不同能力的盗贼，在夜总会、银行、豪宅等地点偷取目标并逃离。它用黑底、简化平面图、视野锥和霓虹色角色构成近似“动态蓝图”的2D画面，强调视线、声音和队友位置。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/113020/Monaco_Whats_Yours_Is_Mine/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Monaco:_What%27s_Yours_Is_Mine" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://www.wsgf.org/dr/monaco-whats-yours-mine/en" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://www.stardewvalley.net/wp-content/uploads/2012/04/StardewValley_9-1024x587.png" alt="Stardew Valley 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">13</span><h2>Stardew Valley</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>温暖田园像素 / 生活模拟RPG</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Nintendo Switch、PlayStation Vita、iOS、Android</div>
+        <p>一款顶视角农场生活 RPG。玩家继承农场后耕种、养动物、采矿、钓鱼、做料理、参加节日并与小镇居民建立关系。它的像素美术色彩温暖、地块关系清楚，房屋、作物、河流和人物都以易读的2D瓦片构成，非常适合参考休闲生活模拟的俯视角表现。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Stardew_Valley" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://www.stardewvalley.net/media/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://wargroove.com/wp-content/uploads/2018/12/Fog-of-War.jpg" alt="Wargroove 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">14</span><h2>Wargroove</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>明亮像素 / 俯视网格战棋</div>
+        <div class="meta"><b>发售平台：</b>Windows、Nintendo Switch、Xbox One、PlayStation 4</div>
+        <p>一款俯视网格回合制战棋。玩家控制指挥官与不同兵种，占领村庄、布置阵型并完成战役或多人对战目标。它的像素角色、地形和UI都非常清楚，阵营色、单位轮廓和格子地图读图优先，是传统2D战棋视觉语言的现代化样本。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/607050/Wargroove/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://wargroove.com/presskit/" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://wargroove.com/presskit/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://www.rpgfan.com/wp-content/uploads/2020/11/The-Swords-of-Ditto-Screenshot-028-1280x720.jpg" alt="The Swords of Ditto: Mormo’s Curse 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">15</span><h2>The Swords of Ditto: Mormo’s Curse</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>手绘卡通 / 童话动作RPG</div>
+        <div class="meta"><b>发售平台：</b>PC（Steam / GOG）、PlayStation 4、Nintendo Switch、iOS、Android</div>
+        <p>一款手绘卡通风的顶视角动作 RPG。玩家在每一次循环中探索岛屿、地下城和城镇，收集玩具般的武器与道具，对抗魔女 Mormo。画面用圆润线条、饱和色块和可爱角色比例呈现，整体比传统暗黑地牢更像轻快童话绘本。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/619780/The_Swords_of_Ditto_Mormos_Curse/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://onebitbeyond.com/the-swords-of-ditto" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://www.rpgfan.com/gallery/the-swords-of-ditto-screenshots/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172450/ss_fd280c437089cacb3b66c681d87f63d769b33551.1920x1080.jpg?t=1773690780" alt="Carto 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">16</span><h2>Carto</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>水彩手绘 / 地图拼接解谜</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Nintendo Switch、PlayStation 4、Xbox One</div>
+        <p>一款手绘地图拼接冒险解谜游戏。玩家可以移动和旋转地图碎片，使世界地形在俯视地图上重新连接，从而打开道路、改变环境并推进故事。它的2D画面有水彩纸感、柔和线条和旅行绘本气质，玩法本身也围绕“俯视地图”展开。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/1172450/Carto/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Carto_(video_game)" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/1172450/Carto/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/606150/ss_c7c33eb041627f7a5fdbdefb0e41269178faf372.1920x1080.jpg?t=1773240026" alt="Moonlighter 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">17</span><h2>Moonlighter</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>清爽像素 / 商店经营 + 地牢动作</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Nintendo Switch、iOS、Android</div>
+        <p>一款把商店经营与俯视地牢动作结合的2D游戏。白天玩家在村中定价、摆货、观察顾客反应，夜晚进入地牢打怪、收集素材和装备。像素画面比传统 Roguelike 更明亮、干净，商店货架和地牢房间都用顶视结构清楚表达。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/606150/Moonlighter/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Moonlighter_(video_game)" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/606150/Moonlighter/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/751780/ss_288c1647ffd3639358505e4e0e5a74214a9a9a23.1920x1080.jpg?t=1773692958" alt="Forager 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">18</span><h2>Forager</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>可爱扁平像素 / 增量采集建造</div>
+        <div class="meta"><b>发售平台：</b>Windows、PlayStation 4、Xbox One、Nintendo Switch、iOS、Android</div>
+        <p>一款顶视角采集、建造、战斗和自动化游戏。玩家从小岛起步，通过砍树、挖矿、种植、解谜和购买新地块不断扩张。视觉上使用可爱扁平像素与高反馈动画，地图由清楚的小块地形组成，适合作为轻量化开放世界与增量成长的2D参考。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/751780/Forager/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Forager_(video_game)" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/751780/Forager/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://media.rawg.io/media/resize/200/-/screenshots/02e/02e6c6a54bb274ccda62ce12c1fb55c3.jpg" alt="Door Kickers 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">19</span><h2>Door Kickers</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>战术平面图 / 顶视实时策略</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、iOS、Android</div>
+        <p>一款2D顶视角实时战术游戏。玩家指挥特警小队分析房间、规划路线、选择破门点、控制视角和射击时机，并可暂停后调整计划。它的美术近似建筑平面图叠加光锥、路线和威胁标记，几乎完全服务于战术可读性。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/248610/Door_Kickers/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Door_Kickers" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://rawg.io/games/door-kickers/screenshots" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://braceyourselfgames.com/wp-content/uploads/2018/08/zone1.jpg" alt="Crypt of the NecroDancer 游戏内俯视角游玩截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">20</span><h2>Crypt of the NecroDancer</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>节奏像素 / 顶视地牢Roguelike</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、PlayStation Vita、iOS、Xbox One、Nintendo Switch、Android</div>
+        <p>一款把 Roguelike 地牢与节奏游戏结合的2D顶视角作品。玩家必须跟随音乐节拍移动和攻击，怪物也按节奏规律行动；踩错拍会打断连击或带来危险。像素地下城、节拍UI、角色动作和音乐反馈共同把“时间节奏”转化为空间战斗。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/247080/Crypt_of_the_NecroDancer/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://braceyourselfgames.com/press/crypt-of-the-necrodancer/" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://braceyourselfgames.com/press/crypt-of-the-necrodancer/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/212680/ss_052d698926073e8d407a864f0e63a486af24ec0d.1920x1080.jpg?t=1538154560" alt="FTL: Faster Than Light 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/212680/ss_052d698926073e8d407a864f0e63a486af24ec0d.1920x1080.jpg?t=1538154560" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">21</span><h2>FTL: Faster Than Light</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>极简像素 / 星舰平面图式Roguelike策略</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、iPad</div>
+        <p>一款把星舰内部当作俯视平面战场的2D太空Roguelike。玩家在追兵逼近的星区间跃迁，实时暂停调配船员、电力、武器和护盾，处理火灾、登舰、舱室破损与随机事件；画面以清晰的船舱格子、图标和像素角色呈现，几乎所有决策都发生在这张“可操作的星舰俯视图”上。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/212680/FTL_Faster_Than_Light/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/FTL:_Faster_Than_Light" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/212680/FTL_Faster_Than_Light/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/590380/ss_3a670d203ac5c1ab538099e014978565740eb406.1920x1080.jpg?t=1541171325" alt="Into the Breach 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/590380/ss_3a670d203ac5c1ab538099e014978565740eb406.1920x1080.jpg?t=1541171325" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">22</span><h2>Into the Breach</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>像素瓦片 / 斜俯视回合制战棋</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、Nintendo Switch、iOS、Android</div>
+        <p>Subset Games的机甲战棋把战场压缩到小型网格上，敌人的下一步攻击会提前显示，玩家需要像解棋题一样用推拉、格挡、牺牲站位来保护城市。它的机甲、怪物、地形与特效都是清晰的2D像素瓦片，在极小空间里形成高密度的策略读图体验。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/590380/Into_the_Breach/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Into_the_Breach" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/590380/Into_the_Breach/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/242680/ss_25da6e703cf45cdbd2a03acb4b1f1aa6d8b7a478.1920x1080.jpg?t=1449523044" alt="Nuclear Throne 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242680/ss_25da6e703cf45cdbd2a03acb4b1f1aa6d8b7a478.1920x1080.jpg?t=1449523044" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">23</span><h2>Nuclear Throne</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>粗颗粒像素 / 顶视高速射击Roguelike</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、PlayStation Vita、Nintendo Switch、Xbox One</div>
+        <p>Vlambeer制作的废土俯视角射击Roguelike，玩家控制突变体在随机地图中拾取武器、积累辐射并选择变异能力。它的画面风格粗粝、爆炸和弹幕极其夸张，角色与敌人都以强轮廓像素素材呈现，强调瞬间反应和混乱战场阅读。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/242680/Nuclear_Throne/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Nuclear_Throne" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/242680/Nuclear_Throne/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/512900/ss_9fc33552a95fada32c6bc0a75b6d899244c4779c.1920x1080.jpg?t=1555377880" alt="Streets of Rogue 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/512900/ss_9fc33552a95fada32c6bc0a75b6d899244c4779c.1920x1080.jpg?t=1555377880" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">24</span><h2>Streets of Rogue</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>像素小人 / 顶视沉浸模拟Roguelite</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Nintendo Switch</div>
+        <p>这是一款把沉浸模拟、沙盒任务和Roguelite城市关卡揉在一起的2D顶视角游戏。玩家可以扮演士兵、医生、黑客、吸血鬼等角色，用潜行、交易、暴力、黑客或混乱物理完成目标；像素街区的房间、NPC、道具和视野反馈让每次任务都像一场小型系统实验。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/512900/Streets_of_Rogue/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Streets_of_Rogue" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/512900/Streets_of_Rogue/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/368340/ss_5bf282c8d5bef2f479b7e55aed91118245ad213b.1920x1080.jpg?t=1544091537" alt="CrossCode 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/368340/ss_5bf282c8d5bef2f479b7e55aed91118245ad213b.1920x1080.jpg?t=1544091537" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">25</span><h2>CrossCode</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>16位像素 / 俯视动作RPG</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、Nintendo Switch、PlayStation 4、Xbox One</div>
+        <p>《CrossCode》以复古16位像素构建出大型俯视动作RPG世界，核心战斗围绕高速闪避、近战连段和弹球式远程投射展开。它在城镇、迷宫与野外地图中穿插大量机关解谜，角色、场景、UI与战斗特效都以2D像素层叠呈现，节奏比传统俯视RPG更接近动作游戏。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/368340/CrossCode/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/CrossCode" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/368340/CrossCode/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://gamemaker.io/_next/image?q=75&amp;url=https%3A%2F%2Fassets.gamemaker.io%2FScreenshot_of_ZERO_Sievert_gunfight_with_spectcular_purple_light_explosion_654f6269df.jpeg&amp;w=3840" alt="ZERO Sievert 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">26</span><h2>ZERO Sievert</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>像素末世 / 顶视撤离射击</div>
+        <div class="meta"><b>发售平台：</b>Windows</div>
+        <p>这是一款后末日题材的2D顶视角撤离射击游戏，玩家从地堡出发进入程序生成的废土搜刮装备、完成任务、改枪并在资源耗尽前撤离。画面使用密集像素植被、建筑与粒子效果来营造压迫感，战斗视野、枪械射程、声音和撤离路线共同决定一次探索能否活着结束。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/1782120/ZERO_Sievert/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://store.steampowered.com/app/1782120/ZERO_Sievert/" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://gamemaker.io/en/blog/zero-seivert-game-development" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/333640/ss_68d3fa28cedebfa47c7085371253aba50075f45d.1920x1080.jpg?t=1531251194" alt="Caves of Qud 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/333640/ss_68d3fa28cedebfa47c7085371253aba50075f45d.1920x1080.jpg?t=1531251194" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">27</span><h2>Caves of Qud</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>ASCII/瓦片 / 顶视传统Roguelike</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、Nintendo Switch</div>
+        <p>《Caves of Qud》是一款深度系统驱动的科幻奇幻Roguelike，玩家在顶视瓦片世界中创建突变人或真民角色，探索遗迹、派系、程序生成历史与复杂的互动规则。它的视觉可在ASCII感和瓦片图之间切换，画面极简但信息密度很高，非常适合研究“少量2D符号如何承载复杂世界”。</p>
+        <div class="links">
+          <a href="https://www.cavesofqud.com/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Caves_of_Qud" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/333640/Caves_of_Qud/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/234390/ss_ae1ddcaa14d69c2c61b6f3f5664973a6a48cabee.1920x1080.jpg?t=1530639396" alt="Teleglitch: Die More Edition 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/234390/ss_ae1ddcaa14d69c2c61b6f3f5664973a6a48cabee.1920x1080.jpg?t=1530639396" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">28</span><h2>Teleglitch: Die More Edition</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>低清像素 / 顶视恐怖射击Roguelike</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux</div>
+        <p>一款极简而阴冷的2D顶视角恐怖射击游戏，场景发生在孤立的军事科研设施中。玩家需要在程序生成的走廊里搜集弹药、合成装备并躲避怪物，粗糙像素、黑暗视野、尖锐音效与资源稀缺共同制造生存压力。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/234390/Teleglitch_Die_More_Edition/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://store.steampowered.com/app/234390/Teleglitch_Die_More_Edition/" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/234390/Teleglitch_Die_More_Edition/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/298630/ss_dc11dfa50054ecb10da0ef8d3fd2b43a45df34c7.1920x1080.jpg?t=1549977515" alt="The Escapists 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/298630/ss_dc11dfa50054ecb10da0ef8d3fd2b43a45df34c7.1920x1080.jpg?t=1549977515" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">29</span><h2>The Escapists</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>像素 / 顶视监狱沙盒</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Xbox 360、Nintendo Switch、iOS、Android</div>
+        <p>《The Escapists》用2D像素顶视角呈现一座按日程运转的监狱。玩家白天点名、工作、锻炼、结交或贿赂狱友，暗中偷材料、制作工具、挖地道或伪装制服，最终策划逃脱；它的乐趣来自平面地图中大量可利用的小规则和巡逻路线。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/298630/The_Escapists/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/The_Escapists" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/298630/The_Escapists/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/233450/ss_0c13ec061d922fbe8ad518eb58487cff09d3fd40.1920x1080.jpg?t=1549032392" alt="Prison Architect 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/233450/ss_0c13ec061d922fbe8ad518eb58487cff09d3fd40.1920x1080.jpg?t=1549032392" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">30</span><h2>Prison Architect</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>平面图式插画 / 顶视经营模拟</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Xbox 360、Nintendo Switch、iOS、Android</div>
+        <p>这款监狱经营模拟以建筑平面图般的顶视角展开，玩家规划牢房、食堂、管线、电力、安防和囚犯动线，再处理暴动、逃脱、改造与预算问题。它的角色与设施以2D图标化素材构成，清晰地把“空间规划”和“行为系统”叠在同一张俯视地图上。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/233450/Prison_Architect/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Prison_Architect" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/233450/Prison_Architect/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/599140/ss_7616d4343808620c0853a9ee5f1e21597a20b042.1920x1080.jpg?t=1540833315" alt="Graveyard Keeper 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/599140/ss_7616d4343808620c0853a9ee5f1e21597a20b042.1920x1080.jpg?t=1540833315" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">31</span><h2>Graveyard Keeper</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>细腻像素 / 俯视墓园经营RPG</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Nintendo Switch、iOS、Android</div>
+        <p>一款带黑色幽默的中世纪墓园经营游戏，玩家在俯视像素地图中采集、种田、制作、研究炼金、经营墓园并处理尸体。它表面上像温和生活模拟，实际系统围绕资源循环、时间安排和“道德灰区”展开，像素场景和角色素材十分统一。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/599140/Graveyard_Keeper/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Graveyard_Keeper" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/599140/Graveyard_Keeper/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/1062140/ss_c3c2253457e7d11ce2f3aa3b05bb36ab4c33f536.1920x1080.jpg?t=1559223737" alt="Garden Story 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1062140/ss_c3c2253457e7d11ce2f3aa3b05bb36ab4c33f536.1920x1080.jpg?t=1559223737" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">32</span><h2>Garden Story</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>柔和像素 / 俯视可爱动作冒险</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Nintendo Switch、Xbox One</div>
+        <p>玩家扮演葡萄Concord，在可爱的俯视像素世界中清理腐坏、修复村庄设施、完成居民请求并探索不同区域。它的角色设计、环境色彩和UI都偏柔和童话感，与许多黑暗或暴力题材的俯视游戏形成鲜明对比。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/1062140/Garden_Story/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Garden_Story" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/1062140/Garden_Story/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://unpackinggame.com/wp-content/uploads/2021/09/Screenshot01.png" alt="Unpacking 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">33</span><h2>Unpacking</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>高清像素 / 等角俯视整理谜题</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、Nintendo Switch、Xbox One、PlayStation 4、PlayStation 5、iOS、Android</div>
+        <p>《Unpacking》没有传统角色移动，而是让玩家在等角俯视房间中把箱子里的物品逐件摆放到新家。它把“收纳”做成空间谜题和无台词叙事，所有家具、物品和房间都是高分辨率像素素材，画面信息主要来自玩家视角下的室内平面布置。</p>
+        <div class="links">
+          <a href="https://www.unpackinggame.com/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://www.unpackinggame.com/" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://www.unpackinggame.com/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/330020/ss_1a577f8b7d1b67099b0be7022f6c693b3fe672c7.1920x1080.jpg?t=1554720479" alt="Children of Morta 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/330020/ss_1a577f8b7d1b67099b0be7022f6c693b3fe672c7.1920x1080.jpg?t=1554720479" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">34</span><h2>Children of Morta</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>手绘像素 / 斜俯视动作RPG</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Nintendo Switch、iOS、Android</div>
+        <p>这是一款以家族叙事为核心的2D像素动作RPG，玩家使用伯格森家族不同成员进入程序化地牢，对抗腐化怪物并逐步解锁家族能力。美术由手绘像素、逐帧动画和灯光效果构成，角色剪影、攻击反馈与场景氛围都很强，适合作为“高完成度像素斜俯视动作”的参考。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/330020/Children_of_Morta/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Children_of_Morta" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/330020/Children_of_Morta/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/304650/ss_ae2b617e2ca6d55caeb38e833f1f15000d57e5d7.1920x1080.jpg?t=1550072106" alt="Sunless Sea 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/304650/ss_ae2b617e2ca6d55caeb38e833f1f15000d57e5d7.1920x1080.jpg?t=1550072106" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">35</span><h2>Sunless Sea</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>手绘哥特 / 俯视航海叙事RPG</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、iOS、PlayStation 4、Xbox One、Nintendo Switch</div>
+        <p>《Sunless Sea》把玩家放在一张黑暗地下海的俯视航海图上，驾驶蒸汽船探索港口、怪物、贸易路线和大量文字事件。它的船只、海面、岛屿与界面以手绘2D素材构成，核心张力来自燃料、补给、恐惧值和叙事选择，而不是3D空间表现。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/304650/SUNLESS_SEA/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Sunless_Sea" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/304650/SUNLESS_SEA/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/268130/ss_d9b2da2bfc6f7c1ca7b72ebbfbaea3c74423a33b.1920x1080.jpg?t=1551642380" alt="Heat Signature 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268130/ss_d9b2da2bfc6f7c1ca7b72ebbfbaea3c74423a33b.1920x1080.jpg?t=1551642380" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">36</span><h2>Heat Signature</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>极简矢量/平面 / 顶视太空潜入</div>
+        <div class="meta"><b>发售平台：</b>Windows</div>
+        <p>Suspicious Developments的顶视潜入游戏把太空船内部设计成可暂停分析的2D平面关卡。玩家登舰、开门、丢扳手、传送、潜行或火拼，以各种即兴方式完成刺杀、偷盗、营救任务；干净的线条、房间轮廓和UI反馈让它很适合作为平面可读性案例。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/268130/Heat_Signature/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://store.steampowered.com/app/268130/Heat_Signature/" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/268130/Heat_Signature/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/356570/ss_1623f93abb623119206fbbda42b6a596e8dff0aa.1920x1080.jpg?t=1545402282" alt="Party Hard 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/356570/ss_1623f93abb623119206fbbda42b6a596e8dff0aa.1920x1080.jpg?t=1545402282" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">37</span><h2>Party Hard</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>霓虹像素 / 顶视潜行策略</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、Xbox One、Nintendo Switch、iOS、Android</div>
+        <p>这款黑色幽默潜行游戏以2D顶视像素派对场景为核心，玩家观察NPC视线、警察反应和环境陷阱，在混乱人群中寻找机会完成关卡目标。霓虹灯、拥挤人群、房间布局和陷阱图标都在同一俯视平面中可读，风格与传统地牢或RPG类俯视游戏差异很大。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/356570/Party_Hard/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Party_Hard" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/356570/Party_Hard/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/297130/ss_398947374cbd6458f9fc3142975ce0a3ac4e5b33.1920x1080.jpg?t=1498680038" alt="Titan Souls 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/297130/ss_398947374cbd6458f9fc3142975ce0a3ac4e5b33.1920x1080.jpg?t=1498680038" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">38</span><h2>Titan Souls</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>极简像素 / 顶视Boss Rush动作</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、PlayStation 4、PlayStation Vita、Android</div>
+        <p>《Titan Souls》是一款操作极简但容错极低的顶视像素Boss Rush：玩家只有一支箭，敌我往往一击即死。大地图探索和Boss房间都采用2D俯视像素表现，战斗重点在观察巨型Boss规律、找破绽、回收箭矢与把握短暂攻击窗口。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/297130/Titan_Souls/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Titan_Souls" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/297130/Titan_Souls/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/858210/ss_f09b4b090294906d42a2b7244fdc2d110ce9d29d.1920x1080.jpg?t=1554819827" alt="Nova Drift 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/858210/ss_f09b4b090294906d42a2b7244fdc2d110ce9d29d.1920x1080.jpg?t=1554819827" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">39</span><h2>Nova Drift</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>霓虹矢量 / 顶视太空射击Roguelite</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS</div>
+        <p>《Nova Drift》把经典街机太空射击的顶视移动和Roguelite构筑结合起来，飞船会在一局内不断进化出新的武器、护盾、机体和模块组合。画面使用霓虹矢量图形、粒子和清晰弹幕轨迹，整体非常平面化，但构筑深度接近动作RPG。</p>
+        <div class="links">
+          <a href="https://store.steampowered.com/app/858210/Nova_Drift/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://steamdb.info/app/858210/" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://store.steampowered.com/app/858210/Nova_Drift/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="image-wrap">
+        <img src="https://mindustrygame.github.io/1.d25af17a.webp" alt="Mindustry 游戏内游玩时玩家视角截图" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleImgError(this)">
+      </div>
+      <div class="content">
+        <div class="title-row"><span class="num">40</span><h2>Mindustry</h2></div>
+        <div class="meta"><b>美术 / 类型：</b>像素工业 / 顶视工厂塔防RTS</div>
+        <div class="meta"><b>发售平台：</b>Windows、macOS、Linux、Android、iOS</div>
+        <p>《Mindustry》是一款2D顶视工厂、塔防与RTS混合游戏，玩家在地图上采矿、铺传送带、生产材料、给炮塔供弹、建造单位并防守核心。它的像素工厂块、传送带物流和敌人路线都从俯视角直接呈现，非常适合参考“纯2D资源流可视化”的设计。</p>
+        <div class="links">
+          <a href="https://mindustrygame.github.io/" target="_blank" rel="noopener noreferrer">资料来源</a>
+          <a href="https://en.wikipedia.org/wiki/Mindustry" target="_blank" rel="noopener noreferrer">平台来源</a>
+          <a href="https://mindustrygame.github.io/" target="_blank" rel="noopener noreferrer">截图来源</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    整理日期：2026-06-10。平台信息按公开商店、官方网站、press kit、SteamDB 与平台资料页汇总，不同地区商店或后续移植/下架情况可能有所差异。图片为外链，离线打开时可能无法显示。
+  </footer>
+
+  <script>
+function handleImgError(img) {
+  const fallback = img.getAttribute('data-fallback');
+  if (fallback && img.src !== fallback) {
+    img.removeAttribute('data-fallback');
+    img.src = fallback;
+    return;
+  }
+  const wrap = img.closest('.image-wrap');
+  if (wrap) wrap.classList.add('broken');
+  img.remove();
+}
+</script>
+</body>
+</html>
