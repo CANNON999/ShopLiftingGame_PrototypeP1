@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panic Basket</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hud" aria-label="game status">
+      <div>
+        <span class="label">TIME</span>
+        <strong id="time">60.0</strong>
+      </div>
+      <div>
+        <span class="label">LOOT</span>
+        <strong id="loot">$0</strong>
+      </div>
+      <div>
+        <span class="label">BAG</span>
+        <strong id="bag">0/10</strong>
+      </div>
+      <div>
+        <span class="label">HEAT</span>
+        <strong id="heat">LOW</strong>
+      </div>
+    </section>
+
+    <section class="game-wrap">
+      <canvas id="game" width="960" height="640" aria-label="Panic Basket game canvas"></canvas>
+      <div id="overlay" class="overlay">
+        <div class="panel">
+          <p class="kicker">Panic Basket</p>
+          <h1>限时抢货，带货撤离</h1>
+          <p id="message">抢商品，找金色高价值目标，用背包里的东西砸晕警卫，然后从绿色出口撤离。</p>
+          <button id="start">开始</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="controls">
+      <span>WASD / 方向键移动</span>
+      <span>Space 冲刺</span>
+      <span>E 拾取</span>
+      <span>F / 点击 投掷</span>
+      <span>跑到绿色出口结算</span>
+    </section>
+  </main>
+  <script src="src/game.js"></script>
+</body>
+</html>
+
