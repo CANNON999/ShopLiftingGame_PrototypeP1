@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panic Basket GDD 解释页</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111318;
+      --panel: #1d222b;
+      --line: #323a46;
+      --text: #f2f5f7;
+      --muted: #aeb8c3;
+      --red: #f45b69;
+      --yellow: #ffd166;
+      --green: #76e39a;
+      --blue: #6ec6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    header, main { max-width: 1120px; margin: 0 auto; padding: 32px 20px; }
+    header { padding-top: 48px; }
+    h1 { margin: 0 0 12px; font-size: clamp(32px, 5vw, 56px); line-height: 1.05; }
+    h2 { margin: 0 0 12px; font-size: 22px; }
+    p { margin: 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
+    .card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 150px;
+    }
+    .tag { color: var(--yellow); font-weight: 800; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .loop {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .step {
+      border: 1px solid var(--line);
+      background: #171b22;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      min-height: 86px;
+    }
+    .map {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    canvas {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border: 1px solid var(--line);
+      image-rendering: pixelated;
+      background: #222a31;
+      border-radius: 8px;
+    }
+    ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    li + li { margin-top: 8px; }
+    @media (max-width: 840px) {
+      .grid, .map { grid-template-columns: 1fr; }
+      .loop { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="tag">GDD Explainer</div>
+    <h1>Panic Basket</h1>
+    <p>一个围绕限时抢夺、随机高价值目标、商品投掷和警卫追逐构成的俯视角像素动作原型。</p>
+  </header>
+  <main>
+    <section>
+      <h2>核心体验拆解</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="tag">Pressure</div>
+          <h2>时间压力</h2>
+          <p>60 秒倒计时让每次绕路、拾取和投掷都带有机会成本。</p>
+        </article>
+        <article class="card">
+          <div class="tag">Choice</div>
+          <h2>风险收益</h2>
+          <p>越深处价值越高，警卫越密。玩家可以随时撤离，也可以继续贪一把。</p>
+        </article>
+        <article class="card">
+          <div class="tag">Comedy</div>
+          <h2>商品即武器</h2>
+          <p>汽水、面包、洗衣液都能投出去。分数资源被消耗成战斗资源。</p>
+        </article>
+      </div>
+    </section>
+
+    <section style="margin-top: 34px;">
+      <h2>一分钟游玩循环</h2>
+      <div class="loop">
+        <div class="step">观察路线</div>
+        <div class="step">冲进货架</div>
+        <div class="step">拾取商品</div>
+        <div class="step">发现稀有物</div>
+        <div class="step">投掷脱身</div>
+        <div class="step">撤离结算</div>
+      </div>
+    </section>
+
+    <section class="map">
+      <div>
+        <h2>原型地图语义</h2>
+        <canvas id="diagram" width="640" height="400"></canvas>
+      </div>
+      <div class="card">
+        <div class="tag">Implementation</div>
+        <h2>实现重点</h2>
+        <ul>
+          <li>canvas 像素渲染，保障静态网页可直接运行。</li>
+          <li>警卫使用视野锥和追逐状态，而不是复杂 AI。</li>
+          <li>高价值物品随机生成，制造每局不确定性。</li>
+          <li>结算把战利品、剩余时间和撤离结果合并成分数。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <script>
+    const canvas = document.getElementById('diagram');
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.fillStyle = '#222a31';
+    ctx.fillRect(0, 0, 640, 400);
+    const rect = (x, y, w, h, c) => { ctx.fillStyle = c; ctx.fillRect(x, y, w, h); };
+    for (let y = 0; y < 400; y += 32) for (let x = 0; x < 640; x += 32) rect(x, y, 30, 30, '#2b333d');
+    rect(54, 70, 92, 230, '#4a6580');
+    rect(190, 70, 92, 230, '#4a6580');
+    rect(326, 70, 92, 230, '#4a6580');
+    rect(462, 70, 92, 230, '#4a6580');
+    rect(34, 326, 572, 42, '#254c3a');
+    rect(250, 332, 140, 30, '#76e39a');
+    rect(486, 40, 82, 42, '#ffd166');
+    rect(498, 52, 58, 18, '#fff1a8');
+    rect(112, 126, 18, 18, '#f45b69');
+    rect(384, 214, 18, 18, '#f45b69');
+    ctx.globalAlpha = .22;
+    ctx.fillStyle = '#f45b69';
+    ctx.beginPath();
+    ctx.moveTo(121, 135); ctx.lineTo(210, 88); ctx.lineTo(210, 188); ctx.closePath(); ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(393, 223); ctx.lineTo(306, 174); ctx.lineTo(306, 274); ctx.closePath(); ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = '#f2f5f7';
+    ctx.font = '20px monospace';
+    ctx.fillText('EXIT', 294, 356);
+    ctx.fillText('RARE', 504, 67);
+  </script>
+</body>
+</html>
+
